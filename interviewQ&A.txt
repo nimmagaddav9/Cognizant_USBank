@@ -1,0 +1,128 @@
+React.js Technical Round
+
+1. React Hooks – Lifecycle methods in hooks, useEffect vs useLayoutEffect
+React Hooks provide a way to use state and other React features in functional components. 
+While hooks don't directly map to class-based lifecycle methods, useEffect and useLayoutEffect can handle many of the same use cases.
+
+useEffect:
+It's similar to componentDidMount, componentDidUpdate, and componentWillUnmount combined.
+It runs after the render is committed to the screen, making it suitable for side effects like data fetching, subscriptions, or DOM manipulation that don't require synchronous execution.
+
+useLayoutEffect:
+It fires synchronously after all DOM mutations but before the browser has a chance to paint. 
+This makes it suitable for reading layout and making visual adjustments that need to happen before the user sees the changes, avoiding potential flickering.
+
+The key difference lies in their timing: useEffect is asynchronous and doesn't block the browser from painting, while useLayoutEffect is synchronous and can block painting.
+
+Here's a table summarizing the key differences:
+Feature                             useEffect                               useLayoutEffect
+Timing              Asynchronous, after render is painted                   Synchronous, after DOM mutations, before paint
+Use Cases     Data fetching, subscriptions, non-visual DOM manipulation     Reading layout, making visual adjustments
+Blocking                        Non-blocking                                Blocking
+Performance             Better for most cases                               Can cause performance issues if overused
+
+It is recommended to use useEffect in most cases and reserve useLayoutEffect for specific scenarios where synchronous DOM updates are necessary.
+
+
+ 2. Virtual DOM – How it works and its benefits
+
+Virtual DOM is a virtual representation of the real DOM.
+React uses virtual DOM to enhance its performance.
+
+Difference between virtual dom and real dom?
+Suppose line of code is changed , processing is done on particular line.
+It will process the whole code in real dom. Virtual  dom is faster
+
+Benefits of using a Virtual DOM:
+1. Improved Performance: By efficiently calculating minimal changes, the virtual DOM significantly reduces the number of DOM manipulations, leading to faster rendering, especially when dealing with frequent updates. 
+2. Declarative coding: Developers can focus on describing the desired UI state without manually managing DOM manipulations, leading to cleaner and more maintainable code. 
+3. Cross-platform development: Libraries like React Native leverage the virtual DOM concept to render UI across different platforms like web and mobile. 
+4. Simplified debugging: The virtual DOM provides a clear representation of the UI structure, making it easier to identify potential issues and debug rendering problems. 
+
+
+3. Shallow Copy vs Deep Copy – With code examples
+
+A shallow copy creates a new object with references to the same memory locations as the original object for nested properties. 
+This means changes to nested objects in the copy will affect the original object.
+
+javascript example: 
+const originalObject = { a: 1, b: { c: 2 } };
+const shallowCopy = { ...originalObject };
+
+shallowCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 3
+
+Deep Copy
+A deep copy creates a new object with new memory locations for all nested properties, ensuring changes to the copy don't affect the original object.
+
+JavaScript Example:
+
+javascript
+const originalObject = { a: 1, b: { c: 2 } };
+const deepCopy = JSON.parse(JSON.stringify(originalObject));
+
+deepCopy.b.c = 3;
+console.log(originalObject.b.c); // Output: 2
+
+
+4. Promise.all() – Usage and real-world applications
+Promise.all() is a powerful method in JavaScript that allows you to handle multiple promises concurrently.
+It takes an iterable (usually an array) of promises as input and returns a single promise that resolves when all the input promises have been fulfilled.
+
+Usage
+The basic syntax of Promise.all() is:
+
+javascript
+Promise.all(iterable)
+
+
+Real-World Applications
+1. API Calls: When you need to fetch data from multiple endpoints and process the combined results
+
+2. Parallel Data Processing: When you have a list of items that need to be processed asynchronously
+
+3. Resource Loading: When developing web applications that require multiple resources to be loaded before initialization
+
+4. Dependency Resolution: When you have multiple asynchronous dependencies that need to be resolved before proceeding
+
+
+5. Axios Interceptors & Retries – How to handle failed requests efficiently
+
+Axios Interceptors
+Axios Interceptors allow you to intercept requests or responses before they are handled by .then or .catch. 
+There are two types of interceptors:
+
+Request Interceptors: Used to modify or add headers, tokens, or other configurations to requests before they are sent.
+
+Response Interceptors: Used to handle responses or errors globally, including logging or retrying requests when necessary.
+
+Axios Retries
+Axios Retry is a plugin that simplifies the process of retrying failed requests. 
+It automatically retries failed requests based on configurable options. 
+
+how to implement it:
+
+1. Install the axios-retry package:
+
+bash
+npm install axios-retry
+
+
+2. Import and configure axios-retry:
+
+javascript
+import axiosRetry from 'axios-retry';
+import axios from 'axios';
+
+axiosRetry(axios, {
+  retries: 3,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: (error) => {
+    return error.response.status === 429 || error.response.status === 500;
+  }
+});
+This configuration will retry the request up to 3 times, with an exponential delay between retries, for 429 (Too Many Requests) and 500 (Internal Server Error) status codes
+
+
+
+6. Coding Question: Find the longest substring in a given string
