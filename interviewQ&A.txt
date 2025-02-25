@@ -126,3 +126,201 @@ This configuration will retry the request up to 3 times, with an exponential del
 
 
 6. Coding Question: Find the longest substring in a given string
+
+----------------------------------------------------
+
+HTML
+
+1. What is semantic tag in HTML?
+Semantic elements = elements with a meaning.
+
+Examples of semantic tags
+<header>
+Defines a header for a document or section, such as a logo, navigation links, or branding elements 
+<main>
+Defines the main content of a page, such as written text, images, and inner paragraphs 
+<section>
+Groups related content that shares a common theme or purpose 
+<article>
+Defines standalone content that can be reused or distributed separately, such as blog posts or news articles 
+<aside>
+Represents tangential or supplemental content that supports or provides additional context to the main content 
+<footer>
+Defines a footer for a document or section, such as navigation links, contact information, and copyright information 
+
+CSS
+
+2. Let's says you want to add external CSS file in your HTML, how do you do that?
+To link an external CSS file to your HTML, place a <link> tag within the <head> section of your HTML document, specifying the relationship as "stylesheet" and the path to your CSS file using the href attribute
+    <link rel="stylesheet" href="style.css">
+
+3. What project you are currently working? Let's say you are developing the website for them and you want to use some external JavaScript/ they have 
+provided me the external script so how can you add that script in you website.
+
+To add an external JavaScript script to your website, you need to insert a <script> tag within your HTML document, specifying the "src" attribute that points to the location of the external JavaScript file.
+   <script src="path/to/your/myScript.js"></script> 
+
+
+4. How can you add the Youtube video in your file? youtube video should play in yor website.
+To embed a YouTube video on your website, find the video, click "Share," then "Embed," copy the provided HTML code, and paste it into your website's HTML where you want the video to appear. 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+5. You have a form let's say login form username and password and you have the login button so now you have to make both inputs compulsory(username and password)
+so now you have to disable the login button until you enter the both the inputs.
+
+To make a login button disabled until both username and password fields are filled in an HTML form, you need to use JavaScript to check the input values and dynamically update the button's disabled attribute based on their state.
+
+
+6. You have worked in CSS right? What is the difference between display: none and visibility: hidden?
+
+In CSS, display: none removes an element from the layout, while 
+visibility: hidden hides an element but retains its space and layout position. 
+
+7. Let's say you wanna add the event on some button, or let's say you wanna attach the function to any button or div or any HTML then how do you do that in react?
+
+In React, you attach event handlers (like onClick) to HTML elements (buttons, divs, etc.) by using the onClick attribute and 
+assigning it a function to execute when the event occurs. 
+
+
+8. What is DOM? If there is id in HTML do how do you do that? and what is the difference between querySelector and querySelector.all? And what 
+will be the difference between the syntax if we use Id and class?
+
+The DOM (Document Object Model) is a programming interface for HTML and XML documents, allowing JavaScript to access and 
+manipulate the structure, style, and content of a web page. To access elements with IDs, use getElementById() or querySelector().
+querySelector() returns the first matching element, while querySelectorAll() returns all matching elements. 
+
+-----------------
+JS and React.JS?
+
+9. How do you use useRef and bind it to html input? give me the syntax and example of it.
+
+To use useRef with an HTML input element in React, you create a ref using useRef(), 
+then assign it to the ref attribute of the input element. 
+You can then access the input element via the ref's current property. 
+
+10. -
+
+11. What are the new features that are added in ES6?
+ES6 (ECMAScript 2015) introduced several key features to JavaScript, including arrow functions, promises, enhanced object literals, 
+spread/rest operators, let and const for variable scoping, for...of loop, and modules with import and export. 
+
+12. Difference between var, let and const keyword?
+
+In JavaScript, var, let, and const are keywords used for variable declaration, but they differ in scope, re-declaration, and re-assignment:
+
+var is function-scoped and allows both, 
+let is block-scoped and allows re-assignment but not re-declaration, and 
+const is block-scoped and neither allows re-assignment nor re-declaration. 
+
+13. What are the two ways you create the components in react?
+
+There are two primary ways to create components in React: 
+Functional Components
+Functional components are JavaScript functions that accept props as arguments and return React elements. 
+They are simpler and more concise than class components, and are the recommended approach for most use cases.
+
+function MyComponent(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+Class Components
+Class components are ES6 classes that extend the React.Component class. 
+They have access to lifecycle methods and can manage their own state. 
+However, they are more verbose than functional components and are generally only needed for more complex scenarios.
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Count: {this.state.count}</h1>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Increment
+        </button>
+      </div>
+    );
+  }
+}
+
+14. What is the difference between class and functional component?
+
+Feature                             Class Component                                                Functional Component
+Definition          ES6 class extending React.Component                                             JavaScript function
+Syntax              Requires render() method to return JSX                                          Returns JSX directly
+State Management    Uses this.state and this.setState()                                             Uses useState hook
+Lifecycle Methods  Provides lifecycle methods like componentDidMount, componentDidUpdate, componentWillUnmount  Uses useEffect hook to handle lifecycle events
+this Keyword        Uses this to access props and state                                         Avoids this keyword, accessing props directly as arguments
+Readability         Can be more verbose and harder to read for complex components               Generally more concise and easier to read, especially for simpler components
+Performance         Can be less performant due to the overhead of class instances and lifecycle methods         Generally more performant, especially with optimizations like React.memo
+Hooks               Cannot use React Hooks                                                                  Can use React Hooks
+
+
+15. What are the lifecycle methods in class components? with some examples
+
+In React class components, lifecycle methods allow you to execute code at specific points in a component's lifecycle, 
+such as mounting, updating, and unmounting. Here's a breakdown with examples: 
+Phases of the Lifecycle:
+Mounting: When a component is first created and added to the DOM (Document Object Model).
+Updating: When a component is re-rendered due to changes in props or state.
+Unmounting: When a component is removed from the DOM. 
+
+16. How do we know that react component is updated?
+A React component update is triggered by changes in its props or state. Several methods and tools can be used to detect these updates.
+
+Methods to detect component updates:
+componentDidUpdate (for class components): This lifecycle method is invoked immediately after updating occurs.
+It receives prevProps and prevState as arguments, allowing comparison with current values to determine what changed.
+    class MyComponent extends React.Component {
+      componentDidUpdate(prevProps, prevState) {
+        if (this.state.count !== prevState.count) {
+          console.log('Count state updated:', this.state.count);
+        }
+      }
+    
+      render() {
+        return <div>{this.state.count}</div>;
+      }
+    }
+
+useEffect (for functional components): This hook can be used to perform side effects after rendering, including updates.
+By providing a dependency array, the effect is only triggered when the specified values change.
+
+    import React, { useState, useEffect } from 'react';
+    
+    function MyComponent() {
+      const [count, setCount] = useState(0);
+    
+      useEffect(() => {
+        console.log('Count state updated:', count);
+      }, [count]);
+    
+      return <div onClick={() => setCount(count + 1)}>{count}</div>;
+    }
+
+17. Did you use routing in react? how do you create routes?
+React applications use the react-router-dom library to handle routing.
+npm install react-router-dom
+
+To create routes, use the <Routes> and <Route> components within your application. 
+The <Routes> component wraps all the individual <Route> components, 
+and each <Route> defines a specific path and the component to render for that path.
+
+18. You wana create a link that will take you to another page what will you do?
+To create a link that navigates to another page in React, the react-router-dom library is commonly used
+
+19. -
+
+20. What package do you use for router?
+For routing in React applications, you primarily use the react-router-dom package, 
+which builds upon the core react-router package and provides DOM-specific APIs for web applications.
+
+21. What are HigherOrder Component? give me an example.
+In React, a Higher-Order Component (HOC) is a function that takes a component and returns a new component with enhanced functionality
+or props, allowing for code reuse and abstraction of logic. 
+
+
