@@ -324,3 +324,85 @@ In React, a Higher-Order Component (HOC) is a function that takes a component an
 or props, allowing for code reuse and abstraction of logic. 
 
 
+22. Call(), Apply(), bind()
+
+Call() -- if we want to create second memory location will interact with 1st memory location.
+
+Apply – if we want to pass array instead of independent parameter
+
+Bind() - merge memory location 1 and memory location 2 -->merge 2 memory locations-->new memory location.
+
+What is the USE? Call function advanced function APPLY, call and apply advanced version is bind().
+Purpose is same. Call, bind, apply –used to access 2 objects in different memory location
+
+
+23. 	JavaScript Methods
+1. length:    it is used to know the length of array
+	2. Delete: it is used to delete the particular element in array. Memory will not be released.
+	3. map() - it is used to manipulate the each and every array element
+	4. Filter() it is used to create the new array based on condition
+	5. reduce():   - it is used to know the summation of array elements.
+	6. reduceRight():  it is used to know the summation from right to left
+	7. Push() it is used to "add" the element at the end of array
+	8. Pop() it is used to "remove" the element at end of array
+	9. Shift() it is used to "remove" the element from beginning of array
+	10. Unshift():   it is used to "add" the element at beginning of array
+	11. findIndex() it is used to find the index of particular element.
+	12. Splice()  it is used to add or remove the elements from array.
+	13. Slice() - The slice() method returns the selected elements in an array, as a new array object.  Extract particular element in array.
+	14. find() it is used to check the element existence
+	15. includes() - it gives true or false for the element.
+	16. some() if element satisfies then it is true else false.
+	17. every() if all the elements satisfies then true.
+	18. fill() fill() - replace every element with 100. ES9 latest function. Mutability concept.
+	19. sort() The sort() method sorts the items of an array. The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down). //num1-num2, //num2-num1
+	20. IndexOf() - won't return indexes to repeated elements.
+	21. flat() - to get single level array from multi-level array, ES9 function available
+	//Infinity property - more than 1 inner array then we need to go for Infinity
+	22. 
+	23. flatMap() The flatMap() method first maps each element using a mapping function, then flattens the result into a new array. It is identical to a map() followed by a flat() of depth 1, but flatMap() is often quite useful, as merging both into one method is slightly more efficient.
+	24. copyWithIn()     - it is used to shift the indexes
+	25. reverse() The reverse() method reverses the order of the elements in an array.
+	26. Array.form() The Array.from() method returns an Array object from any object with a length property or an iterable object.
+	27. join() The join() method returns the array as a string. The elements will be separated by a specified separator. The default separator is comma (,).
+	28. repeat() The repeat() method returns a new string with a specified number of copies of the string it was called on.
+	29. LastIndexOf() The lastIndexOf() method returns the position of the last occurrence of a specified value in a string.
+	30. toString() The toString() method converts a number to a string.
+	31. replace() The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
+	32. trim() The trim() method removes whitespace from both sides of a string.
+	33. trimStart() The trimStart() method removes whitespace from the beginning of a string. trimLeft() is an alias of this method.
+	34. trimEnd() The trimEnd() method removes whitespace from the end of a string. trimRight() is an alias of this method.
+	35. padStart() The padStart() method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
+	36. PadEnd() The padEnd() method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string.
+	37. split()-The split() method is used to split a string into an array of substrings, and returns the new array.
+	38. substr()- The substr() method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters.
+	
+	39. substring() -The substring() method extracts the characters from a string, between two specified indices, and returns the new sub string.
+	
+	40. forEach() - The forEach() method calls a function once for each element in an array, in order.
+	
+	41. for...of()  loops through the values of an iterable object
+	
+  42. for...in() - we can iterate the loop remove the duplicates
+
+  24. Redux is a predictable state container for JavaScript applications. 
+  It helps to you write applications, run in different environments and easy to test. 
+  And simply we called as Redux is a state management tool.
+	
+  Components in redux
+	Actions -->Input Parameters Ex: Deposit and Withdraw money from ATM
+	Store --> Main Server
+	Reducers --> Business Logic
+	Dispatch --> Request
+	Subscribe --> Response
+State --> Store Component Data
+
+25. What are the popular hooks in react and explain it's usage?
+
+useState: Manages state in functional components.
+useEffect: Manages side effects in functional components.
+useContext: Consumes context in functional components.
+useReducer: Manage state with a reducer function, For More complex state management.
+useRef: Accesses DOM elements or stores mutable values.
+useCallback: performance improvement usecase
+useMemo: performance improvement usecase.
