@@ -1,0 +1,57 @@
+TAPTIC AI interview with Cognizant
+React.js
+Javascript
+Coding question
+HTML Questions
+
+1. can you walk me through your resume.
+
+2. What is HOC?
+2. What is call(), apply(), bind()?
+3. What is shallow copy and deep copy?
+4. how do you optimnize performance in React app?
+5. What is promise.All() and race?
+6. What is callback hell? how to avoid it?
+7. What is virtual DOM? example?
+8. How do you integrate API in front end?
+9. If the network request --> API response is 400 ? how do you proceed?
+10. what is local storage and session storage? advantages?
+11. What is code splitting?
+12. What is asynchronous and synchronous operations?
+13. What is connect?
+14. What is controlled and uncontrolled components?
+15. coding question
+//"programming" string - 
+//find the first duplicate character from given string.
+
+
+
+
+//"programming" string - 
+//find the first duplicate character from given string.
+
+const findduplicate = (str) =>{
+  const chars = [];
+  let charFound = null;
+  for(let i = 0 ; i < str.length; i++){
+    if(chars.includes(str[i])){
+        charFound = str[i]
+    }else{
+      chars.push(str[i])
+    }
+
+    
+     console.log("debug", chars , charFound, str[i])
+     if(charFound) break;
+
+  }
+  return charFound;
+}
+
+console.log(findduplicate("apple"));
+
+
+
+
+
+promise.all()
